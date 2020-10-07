@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息列表</title>
+</head>
+<body>
+
+<h3>学生信息列表</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <td>学号</td>
+        <td>性别</td>
+        <td>姓名</td>
+    </tr>
+    </thead>
+    <tbody th:each="student:${list}">
+    <tr>
+        <td th:text="${student.stuId}"></td>
+        <td th:text="${student.sex}"></td>
+        <td th:text="${student.stuName}"></td>
+        <td>
+            <a th:href="@{/update/}+${student.stuId}">编辑</a>
+            <a th:href="@{/delEmp}">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+</head>
+<body>
+<form th:action="@{/insert}">
+    学号 :<input type="text" name="stuId"> <br>
+    性别 :<input type="text" name="sex"> <br>
+    姓名 :<input type="text" name="stuName"> <br>
+    <input type="submit" value="新增">
+
+
+</form>
+<a th:href="@{/select}">查看所有学生信息</a>
+
+
+</body>
+</html>

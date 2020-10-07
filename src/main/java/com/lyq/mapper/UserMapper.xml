@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyq.mapper.UserMapper">
+    <select id="selectPasswordByName" resultType="User" resultMap="userMap">
+        select * from student.user where user_name = #{userName} and password = #{password};
+    </select>
+         <!--通过<resultMap>映射实体类属性名和表的字段名对应关系 -->
+         <resultMap type="com.lyq.enity.User" id="userMap">
+             <!-- 用id属性来映射主键字段 -->
+             <id property="id" column="id"/>
+             <!-- 用result属性来映射非主键字段 -->
+             <result property="userName" column="user_name"/>
+             <result property="password" column="password"/>
+         </resultMap>
+</mapper>

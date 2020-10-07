@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+</head>
+<body>
+<form th:action="@{/update}" method="post">
+    学号 :<input type="text" name="stuId" th:value="${student.stuId}" readonly="true"> <br>
+    性别 :<input type="text" name="sex" th:value="${student.sex}"> <br>
+    姓名 :<input type="text" name="stuName" th:value="${student.stuName}"> <br>
+    <input type="submit" value="保存修改">
+
+
+</form>
+
+</body>
+</html>
